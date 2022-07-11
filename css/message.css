@@ -1,0 +1,42 @@
+.message-content{
+    display: flex;
+    padding: 0 40px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.message-content img{
+    border-radius: 40px;
+    width: 300px;
+}
+
+.message-content .img-content{
+    text-align: center;
+}
+
+.message-content .img-content h5{
+    color: blue;
+    font-size: 1.5em;
+}
+
+.message-content .img-content h6{
+    color: rgb(0, 131, 131);
+    font-size: 1em;
+}
+
+.message-content p{
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    padding-left: 40px;
+}
+
+@media (max-width:991px){
+    .message-content{
+        flex-direction: column;
+    }
+
+    .message-content p{
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+.page h1 {
+    margin-top: 20px;
+    font-size: 3em;
+    color: #5680e9;
+}
+
+.div-container .div-card p {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+}
+
+.div-container .div-card ul li {
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    list-style: square;
+}
+
+.written {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.written img{
+    height: 166px;
+    margin-left: 25px;
+}
+
+.written.left img{
+    margin-right: 25px;
+}
+
+.facility-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.facility-container .facility-card {
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #C1C8E4;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.facility-container .facility-card:hover {
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 60px 0 150px rgba(0, 0, 0, 0.5);
+}
+
+.facility-container .facility-card .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+    align-items: center;
+    text-align: center;
+    background: #C1C8E4;
+    padding: 15px 0;
+}
+
+.facility-container .facility-card:hover .imgBox {
+    transform: rotateY(-135deg);
+}
+
+.facility-container .facility-card:hover .imgBox h3, 
+.facility-container .facility-card:hover .imgBox img {
+    transform: rotateY(180deg);
+}
+
+.facility-container .facility-card .imgBox h3 {
+    text-decoration: underline;
+    font-size: 2em;
+    color: #2a1b3d;
+    transition: 1s;
+}
+
+.facility-container .facility-card .imgBox img {
+    position: absolute;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    top: 25%;
+    left: 0;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.facility-container .facility-card:nth-child(4) .imgBox img,
+.facility-container .facility-card:nth-child(18) .imgBox img {
+    top: 20%;
+}
+
+.facility-container .facility-card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #C1C8E4;
+    height: 100%;
+    overflow: hidden;
+}
+
+.facility-container .facility-card .details p {
+    font-size: 15px;
+}
+
+.facility-card .details ul li {
+    list-style: none;
+    color: red;
+    font-size: 15px;
+}
+
+@media (max-width:991px){
+    .written{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .written.left{
+        flex-direction: column-reverse;
+    }
+    
+    .written img{
+        margin-left: 0;
+        align-self: center;
+        margin-top: 20px;
+    }
+    
+    .written.left img{
+        margin-right: 0;
+    }
+
+    .div-container .div-card:nth-child(3)::before{
+        transform: skew(0.15deg,2deg);
+    }
+}
+
+@media (max-width:350px){
+    .written img{
+        width: 200px;
+    }
+}
+
+@media (max-width:1200px){
+    .div-container .div-card:nth-child(3)::before{
+        transform: skew(1deg, 2deg);
+    }
+}
+
+@media (max-width:1050px){
+    .div-container .div-card:nth-child(3)::before{
+        transform: skew(0.7deg, 2deg);
+    }
+}
+
+@media (max-width:857px){
+    .div-container .div-card:nth-child(3)::before{
+        transform: skew(0.5deg, 2deg);
+    }
+}
+
+@media (max-width:480px){
+    .div-container .div-card:nth-child(3)::before{
+        transform: skew(0.2deg, 2deg);
+    }
+}

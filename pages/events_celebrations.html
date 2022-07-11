@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/events_celebrations.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>Events and Celebrations</h1>
+        <div class="div-container"></div>
+        <div class="foo"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { events } from '../js/events_celebrations.js';
+
+        for (let i = 0; i < events.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add('div-card');
+
+            let content = document.createElement("div");
+            content.classList.add('div-content');
+
+            let heading = document.createElement("h3");
+            heading.classList.add('heading');
+            heading.innerText = events[i]['heading'];
+
+            let h2 = document.createElement("h2");
+            h2.innerText = events[i]['h2'];
+
+            content.appendChild(heading);
+            content.appendChild(h2);
+
+            if (events[i]['quote'] != '') {
+                let quote = document.createElement("p");
+                let italic = document.createElement("i");
+                quote.innerText = events[i]['quote'];
+                let br = document.createElement("br");
+
+                italic.appendChild(quote);
+                content.appendChild(italic);
+                content.appendChild(br);
+            }
+
+            for (let j = 0; j < events[i]['para'].length; j++) {
+                let line = document.createElement('p');
+                line.innerText = events[i]['para'][j];
+                let br = document.createElement("br");
+
+                content.appendChild(line);
+                content.appendChild(br);
+            }
+
+            let image_container = document.createElement("div");
+            image_container.classList.add('image-container');
+
+            for (let k = 0; k < events[i]['images'].length; k++) {
+                let img = document.createElement("img");
+                img.src = '../images/events/' + events[i]['images'][k];
+
+                image_container.appendChild(img);
+            }
+
+            content.appendChild(image_container);
+            card.appendChild(content);
+            document.querySelector('.div-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

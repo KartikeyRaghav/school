@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/infra.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>Infrastructure</h1>
+        <div class="div-container">
+            <div class="div-card">
+                <div class="div-content">
+                    <h2>01</h2>
+                    <h3 class="heading">Administrative Block</h3>
+                    <div class="written left">
+                        <img src="../images/ad1.jpg" alt="Administrative Block">
+                        <p>The Administrative Block of the school is a compact block that includes the Reception,
+                            Management office, Principal's Office, Accounts Office and a Conference Hall.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-content">
+                    <h2>02</h2>
+                    <h3 class="heading">Academic Block</h3>
+                    <div class="written">
+                        <div>
+                            <h3>Classrooms</h3>
+                            <ul class="ul">
+                                <li>The classrooms are well ventilated.</li>
+                                <li>Smart Classes for better learning.</li>
+                            </ul>
+                            <br>
+                            <p>
+                                To keep abreast with latest technology used in classrooms, we have incorporated the
+                                facility of smart classes to make the process of learning fun filled and more
+                                interesting. Text book lessons can be explained and reinforced better with fascinating
+                                visual modules leaving a lasting impact on young minds. It facilitates understanding of
+                                intangible and difficult concepts with clarity and ease. To sum up, it has enhanced
+                                quality of teaching and added variety to class room learning.
+                            </p>
+                        </div>
+                        <img src="../images/ab1.jpg" alt="Academic Block">
+                    </div>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-content">
+                    <h2>03</h2>
+                    <h3 class="heading">Facilities</h3>
+                    <div class="facility-container"></div>
+                </div>
+            </div>
+        </div>
+        <div class="foo"></div>
+    </div>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { facilities } from '../js/infrastructure.js';
+
+        for (let i = 0; i < facilities.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add('facility-card');
+
+            let imgBox = document.createElement("div");
+            imgBox.classList.add('imgBox');
+
+            let h3 = document.createElement("h3");
+            h3.innerText = facilities[i][0];
+
+            let img = document.createElement("img");
+            img.src = '../images/facilities/' + facilities[i][1];
+            img.alt = facilities[i][1];
+
+            let details = document.createElement("div");
+            details.classList.add('details');
+
+            let p = document.createElement("p");
+            p.innerHTML = facilities[i][2];
+
+            details.appendChild(p);
+            imgBox.appendChild(h3);
+            imgBox.appendChild(img);
+            card.appendChild(imgBox);
+            card.appendChild(details);
+            document.querySelector('.facility-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

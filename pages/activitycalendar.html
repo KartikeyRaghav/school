@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/activity.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>Activity Calendar</h1>
+        <div class="div-container">
+            <div class="div-card">
+                <div class="div-content">
+                    <h2>01</h2>
+                    <h3 class="heading">Activities Nursery - UKG (2022-23)</h3>
+                    <div class="table">
+                        <table class="content-table">
+                            <colgroup>
+                                <col span="1" style="width: 25%;">
+                                <col span="1" style="width: 75%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Activities</th>
+                                </tr>
+                            </thead>
+                            <tbody class="nursery"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foo"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { nursery_ukg } from '../js/activitycalender.js';
+        import { activities } from '../js/activitycalender.js';
+
+        for (let i = 0; i < nursery_ukg.length; i++) {
+
+            let tr = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            td1.innerText = nursery_ukg[i][0];
+
+            let td2 = document.createElement("td");
+            let ul = document.createElement("ul");
+
+            for (let j = 0; j < nursery_ukg[i][1].length; j++) {
+
+                let li = document.createElement("li");
+                li.innerText = nursery_ukg[i][1][j]['li'];
+
+                let b = document.createElement("b");
+                b.innerText = nursery_ukg[i][1][j]['bold'];
+
+                li.appendChild(b);
+                ul.appendChild(li);
+            }
+
+            td2.appendChild(ul);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            document.body.querySelector('.nursery').appendChild(tr);
+        }
+
+        for (let j = 0; j < activities.length; j++) {
+            let card = document.createElement("div");
+            card.classList.add('div-card');
+
+            let content = document.createElement("div");
+            content.classList.add('div-content');
+
+            let heading = document.createElement("h3");
+            heading.classList.add('heading');
+            heading.innerText = activities[j][0];
+
+            let h2 = document.createElement("h2");
+            h2.innerText = activities[j][1];
+
+            let table_div = document.createElement("div");
+            table_div.classList.add('table');
+
+            let table = document.createElement("table");
+            table.classList.add('content-table');
+
+            let colgroup = document.createElement("colgroup");
+            let thead = document.createElement("thead");
+            let tr1 = document.createElement("tr");
+
+            for (let k = 0; k < activities[j][2].length; k++) {
+                let col = document.createElement("col");
+                col.span = '1';
+                col.style.width = activities[j][2][k];
+
+                colgroup.appendChild(col);
+
+                let th = document.createElement("th");
+                th.innerText = activities[j][3][k];
+
+                tr1.appendChild(th);
+            }
+
+            let tbody = document.createElement("tbody");
+
+            for (let l = 0; l < activities[j][4].length; l++) {
+                let tr = document.createElement("tr");
+
+                for (let m = 0; m < activities[j][4][l].length; m++) {
+                    let td = document.createElement("td");
+                    td.innerText = activities[j][4][l][m];
+
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+
+            thead.appendChild(tr1);
+            table.appendChild(colgroup);
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            table_div.appendChild(table);
+            content.appendChild(heading);
+            content.appendChild(h2);
+            content.appendChild(table_div);
+            card.appendChild(content);
+            document.querySelector('.div-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+
+    <div class="page">
+        <section>
+            <div class="contactcontainer">
+                <div class="contactInfo">
+                    <div>
+                        <h2>Contact Info</h2>
+                        <ul class="info">
+                            <li>
+                                <span><img src="../images/location.png" alt="Location"></span>
+                                <span>SH 13, NH248A <br>Malibu Town, Sector 47 <br>Gurugram, Haryana 122018</span>
+                            </li>
+                            <li>
+                                <span><img src="../images/mail.png" alt="Mail"></span>
+                                <span>sdavggn@gmail.com</span>
+                            </li>
+                            <li>
+                                <span><img src="../images/call.png" alt="Location"></span>
+                                <span>+91-9999613660 <br>+91-9910155330</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="https://www.facebook.com/s.d.adarshvidyalaya.ggn/"><img src="../images/1.png"
+                                    alt="Facebook"></a></li>
+                    </ul>
+                </div>
+                <div class="contactForm">
+                    <h2>Send a Message</h2>
+                    <form target="_blank" class="formBox"
+                        action="https://formsubmit.co/12a13291cccd904949e23a3c54b41ab0" method="POST">
+                        <div class="inputBox w50">
+                            <input type="text" name="First Name" required>
+                            <span>First Name</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="text" name="Last Name" required>
+                            <span>Last Name</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="email" name="Email-ID" required>
+                            <span>Email Address</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="number" name="Phone No" required>
+                            <span>Mobile Number</span>
+                        </div>
+                        <div class="inputBox w100">
+                            <textarea required name="Message"></textarea>
+                            <span>Write your message here...</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="submit" value="Submit" onclick="setTimeout(()=>{reset();},3000)">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<i class='bx bx-menu' id="btn-mobile"></i>
+<div class="sidebar close">
+    <div class="logo">
+        <div class="logo-details">
+            <i class='bx bxs-graduation'></i>
+            <span class="logo_name">SDAV</span>
+        </div>
+        <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="../index.html">
+                <i class='bx bxs-home'></i>
+                <span class="link_name">Home</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="../index.html">Home</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon-links">
+                <a href="about.html">
+                    <i class='bx bxs-user'></i>
+                    <span class="link_name">About Us</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="about.html">About Us</a></li>
+                <li><a href="president_message.html">President's Message</a></li>
+                <li><a href="manager_message.html">Manager's Message</a></li>
+                <li><a href="principal_message.html">Principal's Message</a></li>
+                <li><a href="director_message.html">Director's Message</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon-links">
+                <a href="academic.html">
+                    <i class='bx bxs-book-reader'></i>
+                    <span class="link_name">Academic</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="academic.html">Academic</a></li>
+                <li><a href="assesmentandevaluation.html">Assesment & Evaluation</a></li>
+                <li><a href="activitycalendar.html">Activity Calendar</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="infrastructure.html">
+                <i class='bx bxs-school'></i>
+                <span class="link_name">Infrastructure</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="infrastructure.html">Infrastructure</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="faculty.html">
+                <i class='bx bxs-group'></i>
+                <span class="link_name">Faculty</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="faculty.html">Faculty</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon-links">
+                <a href="beyond_studies.html">
+                    <i class='bx bxs-calendar-event'></i>
+                    <span class="link_name">Beyond Studies</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="beyond_studies.html">Beyond Studies</a></li>
+                <li><a href="events_celebrations.html">Events & Celebrations</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="general_info.html">
+                <i class='bx bx-info-circle'></i>
+                <span class="link_name">General Info</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="general_info.html">General Info</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="achievements.html">
+                <i class='bx bxs-trophy'></i>
+                <span class="link_name">Achievements</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="achievements.html">Achievements</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="public_disclosure.html">
+                <i class='bx bxs-lock-open'></i>
+                <span class="link_name">Public Disclosure</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="public_disclosure.html">Public Disclosure</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon-links">
+                <a href="admissions.html">
+                    <i class='bx bxs-user-plus'></i>
+                    <span class="link_name">Admissions</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="admissions.html">Admissions</a></li>
+                <li>
+                    <a target="_blank"
+                        href="https://scm.v3m.in/sdav/guest/OnlineRegistrationFormSDAV.aspx?key=6pM3Vn3XhGpdgFaPV3M2dT8QBeq61PDsdnF0XNPjjl875s8=">
+                        Online Registration
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="contact.html">
+                <i class='bx bxs-contact'></i>
+                <span class="link_name">Contact Us</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="contact.html">Contact Us</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    let sidebar = document.querySelector('.sidebar');
+    let sidebarBtn = document.querySelector('#btn');
+    let sidebarBtn_mobile = document.querySelector('#btn-mobile');
+    sidebarBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('close');
+        setTimeout(() => {
+            sidebarBtn.classList.toggle('bx-menu');
+            sidebarBtn.classList.toggle('bx-x');
+        }, 250);
+    });
+    sidebarBtn_mobile.addEventListener('click', () => {
+        sidebar.classList.toggle('close');
+        sidebarBtn.classList.toggle('bx-menu');
+        sidebarBtn.classList.toggle('bx-x');
+    });
+
+    let arrow = document.querySelectorAll('.arrow');
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener('click', (e) => {
+            let arrowParent = e.target.parentElement.parentElement;
+            console.log(arrowParent);
+            arrowParent.classList.toggle('showMenu');
+        })
+    }
+</script>

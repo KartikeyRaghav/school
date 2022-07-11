@@ -1,0 +1,22 @@
+@media (max-width:700px){
+    .div-card tbody tr td:nth-of-type(1){
+        display: none;
+    }
+
+    .div-card tbody tr td:nth-of-type(2)::before{
+        content: 'Information: ';
+    }
+
+    .div-card:nth-child(1) tbody tr td:nth-of-type(2)::before{
+        content: 'Information: ';
+    }
+
+    .div-card tbody tr td:nth-of-type(3)::before{
+        content: 'Details: ';
+    }
+
+    .div-card:nth-child(2) tbody tr td:nth-of-type(3)::before,
+    .div-card:nth-child(3) tbody tr td:nth-of-type(3)::before{
+        content: 'Link: ';
+    }
+}

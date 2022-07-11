@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/faculty.css">
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="Name">
+        </div>
+        <h1>Faculty</h1>
+        <div class="faculty-container"></div>
+        <div class="foo"></div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+    <script type="module">
+        import { faculty } from '../js/faculty.js';
+        let container = document.querySelector('.faculty-container');
+        function box() {
+            let box = document.createElement("div");
+            box.classList.add('faculty-cards');
+            let content = document.createElement("div");
+            content.classList.add('faculty-content');
+            box.appendChild(content);
+            document.body.querySelector('.faculty-container').appendChild(box);
+        }
+
+        for (let j = 0; j < faculty.length; j++) {
+            let box = document.createElement("div");
+            box.classList.add('faculty-cards');
+
+            let content = document.createElement("div");
+            content.classList.add('faculty-content');
+
+            let imgBox = document.createElement("div");
+            imgBox.classList.add('faculty-imgBox');
+
+            let img = document.createElement("img");
+            img.src = faculty[j][2];
+
+            let h2 = document.createElement("h2");
+            h2.innerText = faculty[j][0];
+
+            let span = document.createElement("span");
+            span.innerText = faculty[j][1];
+
+            imgBox.appendChild(h2);
+            imgBox.appendChild(span);
+            imgBox.appendChild(img);
+            content.appendChild(imgBox);
+            box.appendChild(content);
+            document.body.querySelector('.faculty-container').appendChild(box);
+        }
+    </script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+</body>
+
+</html>

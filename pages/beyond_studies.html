@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/beyond_studies.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+    <div class="sidebar_container"></div>
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>Beyond Studies</h1>
+        <p class="start">Our school looks beyond classroom teaching. Regularly the students participate in inter school
+            and intra school competitions and bring laurels.</p>
+        <div class="div-container"></div>
+        <div class="foo"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { bs } from '../js/beyond_studies.js';
+
+        for (let i = 0; i < bs.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add('div-card');
+
+            let content = document.createElement("div");
+            content.classList.add('div-content');
+
+            let heading = document.createElement("h3");
+            heading.classList.add('heading');
+            heading.innerText = bs[i][0];
+
+            let h2 = document.createElement("h2");
+            h2.innerText = bs[i][1];
+
+            let content_container = document.createElement("div");
+            content_container.classList.add('div-content-container');
+
+            let para = document.createElement("div");
+            para.classList.add('para');
+
+            let p = document.createElement("p");
+            p.innerHTML = bs[i][2];
+
+            para.appendChild(p);
+            content_container.appendChild(para);
+
+            if (bs[i].length > 3) {
+                let images = document.createElement("div");
+                images.classList.add('images');
+
+                for (let j = 0; j < bs[i][3].length; j++) {
+                    let img = document.createElement("img");
+                    img.src = '../images/beyond_studies/' + bs[i][3][j];
+                    img.alt = bs[i][3][j];
+
+                    images.appendChild(img);
+                }
+
+                if (bs[i].length > 4) {
+                    let ul = document.createElement("ul");
+                    ul.classList.add('li');
+
+                    for (let k = 0; k < bs[i][4].length; k++) {
+                        let li = document.createElement("li");
+                        li.innerText = bs[i][4][k];
+
+                        ul.appendChild(li);
+                    }
+                    para.appendChild(ul);
+                }
+
+                content_container.appendChild(images);
+            }
+
+            content.appendChild(heading);
+            content.appendChild(h2);
+            content.appendChild(content_container);
+            card.appendChild(content);
+            document.querySelector('.div-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

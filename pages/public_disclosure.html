@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/activity.css">
+    <link rel="stylesheet" href="../css/public_disclosure.css">
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>Mandatory Public Disclosure</h1>
+        <div class="div-container"></div>
+        <div class="foo"></div>
+    </div>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { public_disclosure } from '../js/public_disclosure.js';
+
+        for (let i = 0; i < public_disclosure.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add('div-card');
+
+            let content = document.createElement("div");
+            content.classList.add('div-content');
+
+            let heading = document.createElement("h3");
+            heading.classList.add('heading');
+            heading.innerText = public_disclosure[i][0];
+
+            let h2 = document.createElement("h2");
+            h2.innerText = public_disclosure[i][1];
+
+            let table_div = document.createElement("div");
+            table_div.classList.add('table');
+
+            let table = document.createElement("table");
+            table.classList.add('content-table');
+
+            let colgroup = document.createElement("colgroup");
+            let thead = document.createElement("thead");
+            let tbody = document.createElement("tbody");
+            let tr1 = document.createElement("tr");
+
+            for (let j = 0; j < public_disclosure[i][2].length; j++) {
+                let col = document.createElement("col");
+                col.span = '1';
+                col.width = public_disclosure[i][3][j];
+
+                let th = document.createElement("th");
+                th.innerText = public_disclosure[i][2][j];
+
+                tr1.appendChild(th);
+                colgroup.appendChild(col);
+            }
+
+            for (let k = 0; k < public_disclosure[i][4].length; k++) {
+                let tr = document.createElement("tr");
+
+                for (let l = 0; l < public_disclosure[i][4][k].length; l++) {
+                    if (l < 3) {
+                        let td = document.createElement("td");
+                        if (public_disclosure[i][4][k].length < 4) {
+                            td.innerHTML = public_disclosure[i][4][k][l];
+                        } else {
+                            if (l < 2) {
+                                td.innerHTML = public_disclosure[i][4][k][l];
+                            } else if (l === 2) {
+                                let a = document.createElement("a");
+                                a.target = '_blank';
+                                a.href = public_disclosure[i][4][k][3];
+                                a.innerText = public_disclosure[i][4][k][2];
+
+                                td.appendChild(a);
+                            } else {
+
+                            }
+                        }
+
+                        tr.appendChild(td);
+                    }
+                }
+
+                tbody.appendChild(tr);
+            }
+
+            thead.appendChild(tr1);
+            table.appendChild(colgroup);
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            table_div.appendChild(table);
+            content.appendChild(heading);
+            content.appendChild(h2);
+            content.appendChild(table_div);
+            card.appendChild(content);
+            document.querySelector('.div-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

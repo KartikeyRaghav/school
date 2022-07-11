@@ -1,0 +1,45 @@
+.about-content{
+    display: flex;
+    padding: 20px 40px;
+    align-items: center;
+}
+
+h2{
+    margin-top: 20px;
+    text-align: center;
+    color: #5900ff;
+    font-size: 2em;
+}
+
+.about-content img{
+    border-radius: 40px;
+    width: 400px;
+}
+
+.about-content p{
+    color: red;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+@media (max-width:775px){
+    .about-content{
+        flex-direction: column;
+    }
+
+    .about-content p{
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .about-content img{
+        width: 300px;
+    }
+}
+
+@media (max-width:350px){
+    .about-content img{
+        width: 230px;
+        border-radius: 20px;
+    }
+}

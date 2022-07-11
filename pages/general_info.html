@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/general_info.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>General Information</h1>
+        <div class="div-container">
+            <div class="div-card">
+                <div class="div-content">
+                    <h2>01</h2>
+                    <h3 class="heading">School Timing</h3>
+                    <div class="time-container">
+                        <div class="time-card">
+                            <h3>Office Hours</h3>
+                            <div class="time">
+                                <p>Summer - 7:00 a.m. - 3:00 p.m.</p>
+                                <p>Winter - 8:00 a.m. - 4:00 p.m.</p>
+                            </div>
+                        </div>
+                        <div class="time-card">
+                            <h3>Academic Hours</h3>
+                            <div class="time">
+                                <p>Summer - 7:30 a.m. - 1:30 p.m.</p>
+                                <p>Winter - 8:45 a.m. - 2:45 p.m.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foo"></div>
+    </div>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { general_info } from '../js/general_info.js';
+
+        for (let i = 0; i < general_info.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add('div-card');
+
+            let content = document.createElement("div");
+            content.classList.add('div-content');
+
+            let heading1 = document.createElement("h3");
+            heading1.classList.add('heading');
+            heading1.innerText = general_info[i][0];
+
+            let h2 = document.createElement("h2");
+
+            content.appendChild(heading1);
+            content.appendChild(h2);
+            card.appendChild(content);
+
+            if (i < general_info.length - 2) {
+                let br = document.createElement("br");
+                let heading2 = document.createElement("span");
+                heading2.innerText = general_info[i][1];
+
+                h2.innerText = general_info[i][2];
+
+                for (let j = 3; j < general_info[i].length; j++) {
+                    let uniform_card = document.createElement("div");
+                    uniform_card.classList.add('uniform-card');
+
+                    let h3 = document.createElement("h3");
+                    h3.innerText = general_info[i][j][0];
+
+                    let uniform = document.createElement("div");
+                    uniform.classList.add('uniform');
+
+                    for (let k = 1; k < general_info[i][j].length; k++) {
+                        let uniform_content = document.createElement("div");
+                        uniform_content.classList.add('uniform-content');
+
+                        let h4 = document.createElement("h4");
+                        h4.innerText = general_info[i][j][k][0];
+                        let ul = document.createElement("ul");
+
+                        for (let l = 0; l < general_info[i][j][k][1].length; l++) {
+                            let li = document.createElement("li");
+                            li.innerText = general_info[i][j][k][1][l];
+
+                            ul.appendChild(li);
+                        }
+
+                        uniform_content.appendChild(h4);
+                        uniform_content.appendChild(ul);
+                        uniform.appendChild(uniform_content);
+                    }
+
+                    uniform_card.appendChild(h3);
+                    uniform_card.appendChild(uniform);
+                    content.appendChild(uniform_card);
+                }
+
+                heading1.appendChild(br);
+                heading1.appendChild(heading2);
+            } else if (i === general_info.length - 2) {
+                let p = document.createElement("p");
+                p.innerText = general_info[i][1];
+                h2.innerText = '08';
+
+                content.appendChild(p);
+            } else {
+                h2.innerText = '09';
+
+                let ul = document.createElement("ul");
+
+                for (let m = 0; m < general_info[i][1].length; m++) {
+                    let li = document.createElement("li");
+                    li.innerText = general_info[i][1][m];
+
+                    ul.appendChild(li);
+                }
+                content.appendChild(ul);
+            }
+            document.querySelector('.div-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>

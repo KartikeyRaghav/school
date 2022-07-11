@@ -1,0 +1,112 @@
+.faculty-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.faculty-cards{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.faculty-cards::before{
+    content: '';
+    position: absolute;
+    inset: -40px 100px;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #ff0000,#0b00d4);
+    transition: 0.5s;
+    animation: animate2 4s linear infinite;
+}
+
+.faculty-cards:hover::before{
+    inset: -20px 0px;
+}
+
+@keyframes animate2{
+    0%{
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.faculty-cards::after{
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #C1C8E4;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.faculty-content {
+    position: absolute;
+    inset: 20px;
+    background: linear-gradient(147deg, #ffe53b,#ff2525);
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.faculty-imgBox{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #C1C8E4;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+.faculty-imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border-radius: 50    %; */
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.faculty-cards:hover .faculty-content img{
+    opacity: 0;
+}
+
+.faculty-content h2, .faculty-content span{
+    position: relative;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    z-index: 2;
+    color: rgb(0, 0, 59);
+}
+
+.faculty-content span{
+    font-size: 1.2em;
+    color: rgb(66, 131, 0);
+}
+
+@media (max-width:775px){
+    .faculty-container{
+        width: 100%;
+        margin-left: 0;
+    }
+}

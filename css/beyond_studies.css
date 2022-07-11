@@ -1,0 +1,56 @@
+.page .start{
+    color: red;
+    font-weight: bold;
+    padding: 20px 40px;
+    text-align: left;
+}
+
+.page{
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #e64a19;
+    font-size: 2em;
+}
+
+.div-container .div-card .div-content {
+    color: red;
+    text-align: left;
+    font-weight: bold;
+}
+
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.images img {
+    width: 250px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 2px solid yellow;
+}
+
+ul.li{
+    margin-left: 20px;
+}
+
+ul.li li{
+    list-style: square;
+}
+
+@media (max-width:775px){
+    .images{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:350px){
+    .images img{
+        width: 180px;
+    }
+}

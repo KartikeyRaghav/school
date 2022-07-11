@@ -1,0 +1,83 @@
+.page h1 {
+    margin-top: 20px;
+    font-size: 3em;
+    color: #5680e9;
+}
+
+.time-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.time-container .time-card .time p{
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.div-container .div-card p {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+}
+
+.div-container .div-card ul li {
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    list-style: square;
+}
+
+.uniform-card {
+    margin-top: 25px;
+    box-shadow: 0 0 10px black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.uniform-card .uniform {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.uniform-card .uniform h4 {
+    color: #24305e;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.uniform-card .uniform .uniform-content {
+    width: 35.5vw;
+    padding: 0 20px;
+}
+
+.uniform-card .uniform ul li {
+    color: red;
+    font-weight: bold;
+    list-style: square;
+    text-align: left;
+}
+
+@media (max-width:775px){
+    .uniform-card .uniform,.time-container{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .uniform-card .uniform .uniform-content{
+        margin-top: 20px;
+        width: 60vw;
+        padding: 0 10px;
+    }
+    .uniform-card .uniform ul{
+        margin-top: 10px;
+    }
+    .time-container .time-card:nth-child(2){
+        margin-top: 20px;
+    }
+
+    .div-container .div-card:nth-child(9)::before{
+        transform: skew(0.5deg, 2deg);
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S D Adarsh Vidyalaya, Sec-47, Sohna Road, Gurgaon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/academic.css">
+    <script src="https://combinatronics.com/KartikeyRaghav/school-js/main/js/academic.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="sidebar_container"></div>
+
+    <div class="page">
+        <div class="top-section">
+            <img src="../images/logo.png" alt="Logo">
+            <img src="../images/name.jpg" alt="">
+        </div>
+        <h1>Academics</h1>
+        <p class="start">We envision creating a new generation of conscious young leaders by interweaving enriching
+            learning experiences into the day to day life of learners. S. D. Adarsh Vidyalaya offers an enriched
+            environment including academic simulation and many socialization opportunities for children. We are
+            committed to groom confident and enlightened individuals through a multi-dimensional curriculum which
+            focuses on synergizing knowledge and abilities.<br><br>At S.D. Adarsh Vidyalaya, the highly qualified
+            faculty concentrates on maximising the potential of the students. Personalized instruction based on the
+            requirements of the pupils is also emphasised. With an aim to impart student centred holistic education and
+            to translate the significant changes envisioned by the NEP onto ground level, very clear targets have been
+            laid out and to address these targets various activities and programs catering to scholastic aspects have
+            been designed meticulously. The study programme for all learning levels is unique because it is a
+            cross-fertilization of the finest teaching methodologies.</p>
+        <div class="div-container"></div>
+        <div class="foo"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.foo').load('footer.html');
+            $('.progress').load('progressbar.html');
+            $('.sidebar_container').load('header.html');
+        });
+    </script>
+
+    <script type="module">
+        import { academic } from 'https://combinatronics.com/KartikeyRaghav/school-js/main/js/academic.js';
+
+        for (let i = 0; i < academic.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add('div-card');
+
+            let content = document.createElement("div");
+            content.classList.add('div-content');
+
+            let heading = document.createElement("h3");
+            heading.classList.add('heading');
+            heading.innerText = academic[i][0];
+
+            let h2 = document.createElement("h2");
+            h2.innerText = academic[i][1];
+
+            let content_container = document.createElement("div");
+            content_container.classList.add('div-content-container');
+
+            let ul = document.createElement("ul");
+            let img = document.createElement("img");
+            img.src = academic[i][3];
+            img.alt = academic[i][0];
+
+            for (let j = 0; j < academic[i][2].length; j++) {
+                let li = document.createElement("li");
+                if (typeof academic[i][2][j] === 'string') {
+                    li.innerText = academic[i][2][j];
+                } else {
+                    li.innerText = academic[i][2][j][0];
+                    for (let k = 0; k < academic[i][2][j][1].length; k++) {
+                        let p = document.createElement("p");
+                        p.classList.add('stream');
+                        p.innerText = academic[i][2][j][1][k];
+
+                        li.appendChild(p);
+                    }
+                }
+                ul.appendChild(li);
+            }
+            content_container.appendChild(ul);
+            content_container.appendChild(img);
+            content.appendChild(heading);
+            content.appendChild(h2);
+            content.appendChild(content_container);
+            card.appendChild(content);
+            document.querySelector('.div-container').appendChild(card);
+        }
+    </script>
+</body>
+
+</html>
