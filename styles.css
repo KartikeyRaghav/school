@@ -122,10 +122,10 @@ body {
 }
 
 .sidebar .nav-links li i {
-    height: 48px;
+    height: 42px;
     min-width: 78px;
     text-align: center;
-    line-height: 48px;
+    line-height: 42px;
     color: #fff;
     font-size: 20px;
     transition: all 0.3s ease;
