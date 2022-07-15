@@ -85,7 +85,7 @@ export const facilities = [
         'The grand hall has been the centre stage for a number of our students who have proved their mettle in cultural activities, mega events and other talent shows. It is spacious, well designed and well-equipped auditorium.',
     ],
     [
-        'Bus',
+        'Transport',
         'bus.png',
         'The school provides transport facility to the students through its own buses for transporting the students from different localities to the school and vice-versa.',
     ],
