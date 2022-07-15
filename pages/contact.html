@@ -44,7 +44,7 @@
                 </div>
                 <div class="contactForm">
                     <h2>Send a Message</h2>
-                
+                    <form class="formBox">
                         <div class="inputBox w50">
                             <input type="text" name="First Name" required>
                             <span>First Name</span>
@@ -58,16 +58,17 @@
                             <span>Email Address</span>
                         </div>
                         <div class="inputBox w50">
-                            <input type="number" name="Phone" required>
+                            <input type="number" name="Phone No" required>
                             <span>Mobile Number</span>
                         </div>
                         <div class="inputBox w100">
-                            <textarea required name="Message" ></textarea>
+                            <textarea required name="Message"></textarea>
                             <span>Write your message here...</span>
                         </div>
                         <div class="inputBox w50">
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit" onclick="setTimeout(()=>{reset();},3000)">
                         </div>
+                    </form>
                 </div>
             </div>
         </section>
